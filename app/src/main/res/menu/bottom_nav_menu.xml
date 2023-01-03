@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+    <item android:title="Home"
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/ic_baseline_home_24"/>
+    <item android:title="Photo"
+        android:id="@+id/photoFragment"
+        android:icon="@drawable/ic_baseline_camera_alt_24"/>
+    <item android:title="Profile"
+        android:id="@+id/profileFragment"
+        android:icon="@drawable/user_icon_svgrepo_com"/>
+
+</menu>
