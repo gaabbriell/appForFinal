@@ -6,9 +6,9 @@
     <item android:title="Home"
         android:id="@+id/homeFragment"
         android:icon="@drawable/ic_baseline_home_24"/>
-    <item android:title="Photo"
-        android:id="@+id/photoFragment"
-        android:icon="@drawable/ic_baseline_camera_alt_24"/>
+    <item android:title="Post"
+        android:id="@+id/postFragment"
+        android:icon="@drawable/ic_baseline_post_add_24"/>
     <item android:title="Profile"
         android:id="@+id/profileFragment"
         android:icon="@drawable/user_icon_svgrepo_com"/>
