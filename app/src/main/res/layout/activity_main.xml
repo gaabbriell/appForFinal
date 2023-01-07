@@ -9,6 +9,7 @@
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     tools:context=".MainActivity"
+    android:id="@+id/mainLayout"
     android:background="@color/white">
 
     <FrameLayout
