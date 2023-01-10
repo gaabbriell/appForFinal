@@ -17,9 +17,10 @@ import com.example.myapplication.MainActivity
 import com.example.myapplication.R
 import com.example.myapplication.R.id.forgotPasswordText
 import com.google.firebase.auth.FirebaseAuth
+import org.w3c.dom.Text
 
 class LoginFragment : Fragment(R.layout.fragment_login){
-    @SuppressLint("MissingInflatedId")
+    @SuppressLint("MissingInflatedId", "CommitPrefEdits")
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -31,6 +32,8 @@ class LoginFragment : Fragment(R.layout.fragment_login){
         val buttonLogin : Button = rootView.findViewById(R.id.buttonLogin)
         val textGoToRegister : TextView = rootView.findViewById(R.id.textGoToRegister)
         val forgotPasswordText : TextView = rootView.findViewById(forgotPasswordText)
+        val rootView2: View = LayoutInflater.from(activity).inflate(R.layout.fragment_profile,container,false)
+        var gmailTextView: TextView = rootView2.findViewById(R.id.gmailTextView)
 
         textGoToRegister.setOnClickListener {
             val fragment = RegistrationFragment()
@@ -40,6 +43,14 @@ class LoginFragment : Fragment(R.layout.fragment_login){
             val fragment = ForgotPassword()
             (activity as MainActivity).replaceFragment(fragment)
         }
+
+        if(FirebaseAuth.getInstance().currentUser != null && gmailTextView.text != "TextView"){
+            val intent = Intent(activity, MainActivity::class.java)
+            startActivity(intent)
+            activity?.finish()
+        }
+
+
         buttonLogin.setOnClickListener {
             val email = editTextEmail.text.toString()
             val password = editTextPassword.text.toString()
@@ -52,6 +63,11 @@ class LoginFragment : Fragment(R.layout.fragment_login){
             FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener { task ->
                     if(task.isSuccessful){
+                        val sharedPreferences : SharedPreferences = activity?.applicationContext!!.getSharedPreferences("gmail", Context.MODE_PRIVATE)
+                        val editor : SharedPreferences.Editor = sharedPreferences.edit()
+                        editor.apply{
+                            putString("gmail", editTextEmail.text.toString())
+                        }.apply()
                         val intent = Intent(activity, MainActivity::class.java)
                         startActivity(intent)
                         activity?.finish()

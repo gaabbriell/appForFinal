@@ -1,6 +1,7 @@
 package com.example.myapplication
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -14,6 +15,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.myapplication.fragments.*
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
     private lateinit var button: Button
@@ -24,9 +26,11 @@ class MainActivity : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
         val rootView : View = LayoutInflater.from(application).inflate(R.layout.fragment_profile,null)
-        val gmailTextView = rootView.findViewById<TextView>(R.id.gmailTextView)
-        if(gmailTextView.text.toString().isEmpty()){
+        var gmailTextView = rootView.findViewById<TextView>(R.id.gmailTextView)
+
+        if(gmailTextView.text == "TextView" && FirebaseAuth.getInstance().currentUser == null){
             replaceFragment(RegistrationFragment())
         }
 

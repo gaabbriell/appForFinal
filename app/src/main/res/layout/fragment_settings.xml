@@ -7,6 +7,25 @@
     tools:context=".fragments.SettingsFragment"
     android:background="@color/navy_grey">
 
+    <TextView
+        android:id="@+id/uidTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/settingsLayout"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/buttonLogout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Logout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/settingsLayout" />
+
     <FrameLayout
         android:id="@+id/settingsLayout"
         android:layout_width="match_parent"
