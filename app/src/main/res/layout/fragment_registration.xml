@@ -84,6 +84,7 @@
                 android:textColor="@color/white"
                 android:textColorHint="#CACACA"
                 android:button="@drawable/checkbox_selector"
+                android:clickable="true"
                 android:text="Male"/>
             <CheckBox
                 android:id="@+id/checkboxFemale"
@@ -94,6 +95,7 @@
                 android:textColor="@color/white"
                 android:textColorHint="#CACACA"
                 android:button="@drawable/checkbox_selector"
+                android:clickable="true"
                 android:text="Female"/>
         </LinearLayout>
 
