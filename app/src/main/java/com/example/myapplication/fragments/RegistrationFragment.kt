@@ -8,11 +8,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.CheckBox
-import android.widget.EditText
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import com.example.myapplication.MainActivity
 import com.example.myapplication.R
 import com.google.firebase.auth.FirebaseAuth
@@ -34,12 +30,6 @@ class RegistrationFragment : Fragment(R.layout.fragment_registration){
         val editTextPersonName : EditText = rootView.findViewById(R.id.editTextPersonName)
         val editTextPersonSurname : EditText = rootView.findViewById(R.id.editTextPersonSurname)
 
-        if(checkboxMale.isChecked){
-            checkboxFemale.isChecked = false
-        }else if(checkboxFemale.isChecked){
-            checkboxMale.isChecked = false
-        }
-
         textGoToRegister.setOnClickListener {
             val fragment = LoginFragment()
             (activity as MainActivity).replaceFragment(fragment)
@@ -51,34 +41,29 @@ class RegistrationFragment : Fragment(R.layout.fragment_registration){
             val personSurname = editTextPersonSurname.text.toString()
             val personName = editTextPersonName.text.toString()
 
-            if(email.isEmpty() || password.isEmpty() || personSurname.isEmpty() || personName.isEmpty() ){
+            if (checkboxFemale.isChecked && checkboxMale.isChecked) {
+                Toast.makeText(activity, "Please choose one gender!", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }else if (!checkboxFemale.isChecked && !checkboxMale.isChecked) {
+                Toast.makeText(activity, "Please choose gender!", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }else if(email.isEmpty() || password.isEmpty() || personSurname.isEmpty() || personName.isEmpty() ){
                 Toast.makeText(activity, "Empty fields!", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
+            }else{
+                FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password)
+                    .addOnCompleteListener { task ->
+                        if(task.isSuccessful){
+                            val fragment = LoginFragment()
+                            (activity as MainActivity).replaceFragment(fragment)
+                        } else{
+                            Toast.makeText(activity, "Error!", Toast.LENGTH_SHORT).show()
+                        }
+                    }
             }
 
-            FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener { task ->
-
-                    val sharedPreferences : SharedPreferences = activity?.applicationContext!!.getSharedPreferences("gmail", Context.MODE_PRIVATE)
-                    val editor : SharedPreferences.Editor = sharedPreferences.edit()
-                    editor.apply{
-                        putString("userName", editTextPersonName.text.toString())
-                        putString("userSurname", editTextPersonSurname.text.toString())
-                        if (checkboxMale.isChecked){
-                            putString("gender", checkboxMale.text.toString())
-                        }else if(checkboxFemale.isChecked){
-                            putString("gender", checkboxFemale.text.toString())
-                        }
-                    }.apply()
-
-                    if(task.isSuccessful){
-                        val fragment = LoginFragment()
-                        (activity as MainActivity).replaceFragment(fragment)
-                    } else{
-                        Toast.makeText(activity, "Error!", Toast.LENGTH_SHORT).show()
-                    }
-                }
         }
         return rootView
     }
+
 }
