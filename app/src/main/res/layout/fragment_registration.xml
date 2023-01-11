@@ -43,38 +43,85 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="24dp"
+        android:layout_marginBottom="32dp"
         android:orientation="vertical"
-        android:layout_marginBottom="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+        <EditText
+            android:id="@+id/editTextPersonName"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginVertical="10dp"
+            android:background="@drawable/edt_background"
+            android:drawablePadding="5dp"
+            android:hint="Name"
+            android:paddingStart="10dp"
+            android:textColor="@color/white"
+            android:textColorHint="#CACACA"/>
+
+        <EditText
+            android:id="@+id/editTextPersonSurname"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginVertical="10dp"
+            android:background="@drawable/edt_background"
+            android:drawablePadding="5dp"
+            android:hint="Surname"
+            android:paddingStart="10dp"
+            android:textColor="@color/white"
+            android:textColorHint="#CACACA"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <CheckBox
+                android:id="@+id/checkboxMale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="10dp"
+                android:textColor="@color/white"
+                android:textColorHint="#CACACA"
+                android:button="@drawable/checkbox_selector"
+                android:text="Male"/>
+            <CheckBox
+                android:id="@+id/checkboxFemale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:paddingStart="10dp"
+                android:textColor="@color/white"
+                android:textColorHint="#CACACA"
+                android:button="@drawable/checkbox_selector"
+                android:text="Female"/>
+        </LinearLayout>
 
         <EditText
             android:id="@+id/editTextEmail"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginVertical="10dp"
-            android:hint="Email"
             android:background="@drawable/edt_background"
-            android:textColor="@color/white"
-            android:textColorHint="#CACACA"
             android:drawableLeft="@drawable/ic_baseline_email_24"
+            android:drawablePadding="5dp"
+            android:hint="Email"
             android:paddingStart="10dp"
-            android:drawablePadding="5dp"/>
+            android:textColor="@color/white"
+            android:textColorHint="#CACACA" />
 
         <EditText
             android:id="@+id/editTextPassword"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:hint="Password"
-            android:background="@drawable/edt_background"
-            android:textColor="@color/white"
-            android:textColorHint="#CACACA"
             android:layout_marginVertical="10dp"
+            android:background="@drawable/edt_background"
             android:drawableLeft="@drawable/ic_baseline_lock_24"
+            android:drawablePadding="5dp"
+            android:hint="Password"
             android:paddingStart="10dp"
-            android:drawablePadding="5dp"/>
+            android:textColor="@color/white"
+            android:textColorHint="#CACACA" />
 
         <Button
             android:id="@+id/buttonRegistration"
