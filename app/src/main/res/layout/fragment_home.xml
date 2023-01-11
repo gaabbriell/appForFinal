@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragments.HomeFragment"
-    android:background="@color/navy_grey">
+    android:background="#E3E3E3">
 
     <LinearLayout
         android:id="@+id/headerHome"
@@ -34,8 +34,8 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:background="@drawable/ic_baseline_filter_24"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
