@@ -1,9 +1,8 @@
 package com.example.myapplication.fragments
 
 import android.annotation.SuppressLint
-import android.content.Context
-import android.content.SharedPreferences
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -11,15 +10,19 @@ import android.view.ViewGroup
 import android.widget.*
 import com.example.myapplication.MainActivity
 import com.example.myapplication.R
+import com.example.myapplication.User
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.*
 
 class RegistrationFragment : Fragment(R.layout.fragment_registration){
     @SuppressLint("MissingInflatedId")
+    private lateinit var dbRef: DatabaseReference
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        var database: DatabaseReference
         val rootView = inflater.inflate(R.layout.fragment_registration, container, false)
         val buttonRegistration : Button = rootView.findViewById(R.id.buttonRegistration)
         val textGoToRegister : TextView = rootView.findViewById(R.id.textGoToRegister)
@@ -36,30 +39,65 @@ class RegistrationFragment : Fragment(R.layout.fragment_registration){
         }
 
         buttonRegistration.setOnClickListener {
-            val email = editTextEmail.text.toString()
+            val mail = editTextEmail.text.toString()
+            val changedMail = mail.replace(("[^\\w\\d ]").toRegex(), "")
             val password = editTextPassword.text.toString()
-            val personSurname = editTextPersonSurname.text.toString()
-            val personName = editTextPersonName.text.toString()
-
+            val userSurname = editTextPersonSurname.text.toString()
+            val userName = editTextPersonName.text.toString()
+            val maleValue = "Male"
+            val femaleValue = "Female"
+            dbRef = FirebaseDatabase.getInstance().getReference("Users")
             if (checkboxFemale.isChecked && checkboxMale.isChecked) {
                 Toast.makeText(activity, "Please choose one gender!", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }else if (!checkboxFemale.isChecked && !checkboxMale.isChecked) {
                 Toast.makeText(activity, "Please choose gender!", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
-            }else if(email.isEmpty() || password.isEmpty() || personSurname.isEmpty() || personName.isEmpty() ){
+            }else if(mail.isEmpty() || password.isEmpty() || userSurname.isEmpty() || userName.isEmpty() ){
                 Toast.makeText(activity, "Empty fields!", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
+            }else if(checkboxMale.isChecked){
+
+                        FirebaseAuth.getInstance().createUserWithEmailAndPassword(mail,password)
+                            .addOnCompleteListener { task ->
+                                if(task.isSuccessful){
+                                    val userGender = maleValue
+                                    val userId = dbRef.push().key!!
+                                    val user = User(userId,userName,userSurname,userGender,mail,password)
+                                    dbRef.child(changedMail).setValue(user)
+                                        .addOnCompleteListener {
+                                            Toast.makeText(activity, "Successfully registered", Toast.LENGTH_SHORT).show()
+                                            val fragment = LoginFragment()
+                                            (activity as MainActivity).replaceFragment(fragment)
+                                        }.addOnFailureListener { error ->
+                                            Toast.makeText(activity, "Error ${error.message}", Toast.LENGTH_SHORT).show()
+                                        }
+                                }else{
+                                    Toast.makeText(activity, "Error!", Toast.LENGTH_SHORT).show()
+                                }
+                            }
+
             }else{
-                FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password)
-                    .addOnCompleteListener { task ->
-                        if(task.isSuccessful){
-                            val fragment = LoginFragment()
-                            (activity as MainActivity).replaceFragment(fragment)
-                        } else{
-                            Toast.makeText(activity, "Error!", Toast.LENGTH_SHORT).show()
-                        }
+                val userGender = femaleValue
+                val userId = dbRef.push().key!!
+                val user = User(userId,userName,userSurname,userGender,mail,password)
+                dbRef.child(changedMail).setValue(user)
+                    .addOnCompleteListener {
+                        FirebaseAuth.getInstance().createUserWithEmailAndPassword(mail,password)
+                            .addOnCompleteListener { task ->
+                                if(task.isSuccessful){
+                                    val fragment = LoginFragment()
+                                    (activity as MainActivity).replaceFragment(fragment)
+                                }else{
+                                    Toast.makeText(activity, "Error!", Toast.LENGTH_SHORT).show()
+                                }
+                            }
+                        Toast.makeText(activity, "Successfully registered", Toast.LENGTH_SHORT).show()
+                    }.addOnFailureListener { error ->
+                        Toast.makeText(activity, "Error ${error.message}", Toast.LENGTH_SHORT).show()
                     }
+
+
             }
 
         }
