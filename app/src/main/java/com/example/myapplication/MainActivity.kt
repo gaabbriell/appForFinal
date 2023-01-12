@@ -20,6 +20,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
+
+
     private lateinit var button: Button
     private lateinit var bottomNavigationView: BottomNavigationView
     private lateinit var navController: NavController
