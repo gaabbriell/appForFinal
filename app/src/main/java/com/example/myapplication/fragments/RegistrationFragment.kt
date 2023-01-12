@@ -13,6 +13,7 @@ import com.example.myapplication.R
 import com.example.myapplication.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
+import com.google.firebase.database.FirebaseDatabase
 
 class RegistrationFragment : Fragment(R.layout.fragment_registration){
     @SuppressLint("MissingInflatedId")
@@ -51,7 +52,7 @@ class RegistrationFragment : Fragment(R.layout.fragment_registration){
                 Toast.makeText(activity, "Please choose one gender!", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }else if (!checkboxFemale.isChecked && !checkboxMale.isChecked) {
-                Toast.makeText(activity, "Please choose gender!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(activity, "Please choose your gender!", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }else if(mail.isEmpty() || password.isEmpty() || userSurname.isEmpty() || userName.isEmpty() ){
                 Toast.makeText(activity, "Empty fields!", Toast.LENGTH_SHORT).show()
