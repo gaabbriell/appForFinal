@@ -55,9 +55,9 @@ class ProfileFragment : Fragment(R.layout.fragment_profile), View.OnClickListene
                 personSurname.text = userSurname.toString()
                 personGender.text = userGender.toString()
                 if(personGender.text == "Male"){
-                    imageViewProfilePicture.setImageResource(R.drawable.ic_baseline_man_24)
+                    imageViewProfilePicture.setImageResource(R.drawable.male_user_svgrepo_com)
                 }else if(personGender.text == "Female"){
-                    imageViewProfilePicture.setImageResource(R.drawable.ic_baseline_woman_24)
+                    imageViewProfilePicture.setImageResource(R.drawable.user_female_filled_svgrepo_com)
                 }
             }
 

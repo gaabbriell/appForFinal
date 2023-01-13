@@ -17,6 +17,8 @@ import com.example.myapplication.MainActivity
 import com.example.myapplication.R
 import com.example.myapplication.R.id.forgotPasswordText
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import org.w3c.dom.Text
 
 class LoginFragment : Fragment(R.layout.fragment_login){
@@ -59,7 +61,6 @@ class LoginFragment : Fragment(R.layout.fragment_login){
                 Toast.makeText(activity, "Empty!", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
-
             FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener { task ->
                     if(task.isSuccessful){

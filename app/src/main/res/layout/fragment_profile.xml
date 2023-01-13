@@ -164,7 +164,7 @@
                     android:id="@+id/personName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="TextView"
+                    android:text=""
                     android:textColor="#4F1559"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -174,7 +174,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:text="TextView"
+                    android:text=""
                     android:textColor="#4F1559"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -216,7 +216,6 @@
                 android:id="@+id/imageViewProfilePicture"
                 android:layout_width="105dp"
                 android:layout_height="105dp"
-                android:src="@drawable/img1"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
