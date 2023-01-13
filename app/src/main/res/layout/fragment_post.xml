@@ -105,7 +105,6 @@
             android:layout_width="360dp"
             android:layout_height="360dp"
             android:layout_marginTop="22dp"
-            android:background="@drawable/post_border"
             android:padding="5dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -113,8 +112,9 @@
 
             <ImageView
                 android:id="@+id/postImage"
-                android:layout_width="match_parent"
-                android:layout_height="380dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

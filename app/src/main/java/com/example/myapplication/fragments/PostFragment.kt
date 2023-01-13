@@ -2,23 +2,17 @@ package com.example.myapplication.fragments
 
 import android.app.Activity.RESULT_OK
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
-import android.provider.MediaStore
-import android.provider.MediaStore.Files.FileColumns.MEDIA_TYPE_IMAGE
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
-import android.widget.ProgressBar
-import androidx.fragment.app.Fragment
-import com.example.myapplication.MainActivity
 import com.example.myapplication.R
 
 
 class PostFragment : Fragment(R.layout.fragment_post) {
-
     companion object{
         val IMAGE_REQUEST_CODE = 100
     }

@@ -8,7 +8,7 @@
     android:background="@color/navy_blue">
 
     <LinearLayout
-        android:id="@+id/headerRegistration"
+        android:id="@+id/headerImageAdd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -49,6 +49,26 @@
                 android:textSize="17sp"
                 android:layout_marginStart="20dp"/>
     </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/editLayoutContainer"
+        android:layout_width="360dp"
+        android:layout_height="360dp"
+        android:padding="5dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/headerImageAdd">
+
+        <ImageView
+            android:id="@+id/addImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </FrameLayout>
 
 
     <Button
