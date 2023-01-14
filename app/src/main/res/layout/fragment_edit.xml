@@ -78,7 +78,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:orientation="vertical"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnRotate">
@@ -91,18 +91,11 @@
             android:text="3D ROTATE X" />
 
         <Button
-            android:id="@+id/btnFadeIn"
-            android:layout_width="150dp"
-            android:layout_marginTop="10dp"
-            android:layout_height="wrap_content"
-            android:text="fade in" />
-
-        <Button
-            android:id="@+id/btnZoomIn"
+            android:id="@+id/btnScaleX"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="zoom in" />
+            android:text="Scale X" />
 
 
     </LinearLayout>
@@ -113,7 +106,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="30dp"
         android:orientation="vertical"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnRotate">
@@ -127,18 +120,11 @@
 
 
         <Button
-            android:id="@+id/btnFadeOut"
+            android:id="@+id/btnScaleY"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="fade out" />
-
-        <Button
-            android:id="@+id/btnZoomOut"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="zoom out" />
+            android:text="scale y" />
 
     </LinearLayout>
 

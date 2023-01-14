@@ -1,5 +1,7 @@
 package com.example.myapplication.fragments
 
+import android.animation.AnimatorSet
+import android.animation.ObjectAnimator
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.SharedPreferences
@@ -13,7 +15,9 @@ import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.ImageView
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.repeatOnLifecycle
 import com.example.myapplication.R
+import kotlinx.coroutines.NonCancellable.start
 
 
 class EditFragment : Fragment(R.layout.fragment_edit) {
@@ -28,54 +32,62 @@ class EditFragment : Fragment(R.layout.fragment_edit) {
         var btnRotate: Button = rootView.findViewById(R.id.btnRotate)
         var btnRotateByX:Button = rootView.findViewById(R.id.btnRotateByX)
         var btnRotateByY:Button = rootView.findViewById(R.id.btnRotateByY)
-        var btnFadeIn:Button = rootView.findViewById(R.id.btnFadeIn)
-        var btnFadeOut:Button = rootView.findViewById(R.id.btnFadeOut)
-        var btnZoomIn: Button = rootView.findViewById(R.id.btnZoomIn)
-        var btnZoomOut: Button = rootView.findViewById(R.id.btnZoomOut)
+        var btnScaleX: Button = rootView.findViewById(R.id.btnScaleX)
+        var btnScaleY: Button = rootView.findViewById(R.id.btnScaleY)
 
 
-// Zoom in/out
-        btnZoomIn.setOnClickListener{
-            editImage.startAnimation(AnimationUtils.loadAnimation(
-                context,
-                R.anim.zoom_in
-            ))
-        }
-
-        btnZoomOut.setOnClickListener{
-            editImage.startAnimation(AnimationUtils.loadAnimation(
-                context,
-                R.anim.zoom_out
-            ))
+        btnScaleX.setOnClickListener{
+            val animations = arrayOf(4f).map { translation ->
+                ObjectAnimator.ofFloat(editImage, "scaleX", translation).apply {
+                    duration = 800
+                    repeatCount = ObjectAnimator.INFINITE
+                    repeatMode = ObjectAnimator.RESTART
+                }
+            }
+            val set = AnimatorSet()
+            set.playTogether(animations)
+            set.start()
         }
 
 
-// Fade in/out
-        btnFadeIn.setOnClickListener{
-                editImage.startAnimation(AnimationUtils.loadAnimation(
-                    context,
-                    R.anim.fade_in
-                ))
+        btnScaleY.setOnClickListener{
+            val animations = arrayOf(4f).map { translation ->
+                ObjectAnimator.ofFloat(editImage, "scaleY", translation).apply {
+                    duration = 800
+                    repeatCount = ObjectAnimator.INFINITE
+                    repeatMode = ObjectAnimator.RESTART
+                }
+            }
+            val set = AnimatorSet()
+            set.playTogether(animations)
+            set.start()
         }
-        btnFadeOut.setOnClickListener{
-            editImage.startAnimation(AnimationUtils.loadAnimation(
-                context,
-                R.anim.fade_out
-            ))
-        }
+
 
 // 3D rotation
         btnRotateByY.setOnClickListener{
-            editImage.animate().apply {
-                duration =1000
-                rotationYBy(360f)
-            }.start()
+            val animations = arrayOf(360f).map { translation ->
+                ObjectAnimator.ofFloat(editImage, "rotationY", translation).apply {
+                    duration = 1000
+                    repeatCount = ObjectAnimator.INFINITE
+                    repeatMode = ObjectAnimator.RESTART
+                }
+            }
+            val set = AnimatorSet()
+            set.playTogether(animations)
+            set.start()
         }
         btnRotateByX.setOnClickListener{
-            editImage.animate().apply {
-                duration =1000
-                rotationXBy(360f)
-            }.start()
+            val animations = arrayOf(360f).map { translation ->
+                ObjectAnimator.ofFloat(editImage, "rotationX", translation).apply {
+                    duration = 1000
+                    repeatCount = ObjectAnimator.INFINITE
+                    repeatMode = ObjectAnimator.RESTART
+                }
+            }
+            val set = AnimatorSet()
+            set.playTogether(animations)
+            set.start()
         }
 
 // 2D rotation
@@ -89,7 +101,7 @@ class EditFragment : Fragment(R.layout.fragment_edit) {
             }else{
                 editImage.rotation = rotation
                 rotation += 90f
-                }
+            }
         }
         return rootView
     }
