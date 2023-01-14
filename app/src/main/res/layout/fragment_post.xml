@@ -100,47 +100,22 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <FrameLayout
-            android:id="@+id/postLayoutContainer"
-            android:layout_width="360dp"
-            android:layout_height="360dp"
-            android:layout_marginTop="22dp"
-            android:padding="5dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextPostText">
+        <EditText
+            android:id="@+id/editTextImageUrl"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/edt_background2"
+            android:hint="Put your image url"
+            android:paddingStart="10dp"
+            android:textColor="@color/black"
+            android:textColorHint="#757575"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextPostText"
+            tools:layout_editor_absoluteX="20dp" />
 
-            <ImageView
-                android:id="@+id/postImage"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextPostText" />
-        </FrameLayout>
 
-<!--        <ProgressBar-->
-<!--            android:id="@+id/progress_bar"-->
-<!--            style="@style/Widget.AppCompat.ProgressBar.Horizontal"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginHorizontal="25dp"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toBottomOf="@+id/postLayoutContainer" />-->
-
-        <Button
-            android:id="@+id/button_choose_image"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#7B208A"
-            android:text="upload image"
-            android:layout_marginTop="30dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/postLayoutContainer" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

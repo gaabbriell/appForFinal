@@ -8,6 +8,17 @@
     tools:context=".fragments.EditFragment"
     android:background="@color/navy_grey">
 
+    <Button
+        android:id="@+id/cancelBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="cancel"
+        app:layout_constraintBottom_toTopOf="@+id/filterLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnRotate" />
+
 
     <LinearLayout
         android:id="@+id/headerSettings"

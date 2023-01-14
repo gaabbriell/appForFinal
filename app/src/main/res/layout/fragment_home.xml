@@ -7,6 +7,16 @@
     tools:context=".fragments.HomeFragment"
     android:background="#E3E3E3">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycleView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/headerHome"
+        tools:listitem="@layout/item_post_with_image" />
+
     <LinearLayout
         android:id="@+id/headerHome"
         android:layout_width="match_parent"
@@ -44,36 +54,5 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/layoutStories"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:orientation="horizontal"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginVertical="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/headerHome">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Layout for stories"
-            android:textSize="45sp"/>
-
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:id="@+id/homeContent"
-        android:layout_width="match_parent"
-        android:layout_height="550dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layoutStories"
-        android:orientation="vertical" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
