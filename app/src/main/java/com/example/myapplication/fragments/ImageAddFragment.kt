@@ -65,3 +65,4 @@ class ImageAddFragment : Fragment(R.layout.fragment_image_add) {
     }
 }
 
+
