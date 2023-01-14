@@ -75,6 +75,11 @@ class ProfileFragment : Fragment(R.layout.fragment_profile), View.OnClickListene
 
 
         button.setOnClickListener(this)
+        val editor : SharedPreferences.Editor = sharedPreferences.edit()
+        editor.apply{
+            putString("userName", personName.text.toString())
+            putString("userSurname", personSurname.text.toString())
+        }.apply()
         return rootView
     }
     override fun onClick(p0: View?) {

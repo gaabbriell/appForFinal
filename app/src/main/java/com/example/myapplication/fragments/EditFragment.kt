@@ -34,59 +34,59 @@ class EditFragment : Fragment(R.layout.fragment_edit) {
         var btnRotateByY:Button = rootView.findViewById(R.id.btnRotateByY)
         var btnScaleX: Button = rootView.findViewById(R.id.btnScaleX)
         var btnScaleY: Button = rootView.findViewById(R.id.btnScaleY)
+        var cancelBtn: Button = rootView.findViewById(R.id.cancelBtn)
 
 
+        var animation = true
+        val animationsRotateX = arrayOf(360f).map { translation ->
+            ObjectAnimator.ofFloat(editImage, "rotationX", translation).apply {
+                duration = 1000
+                repeatCount = ObjectAnimator.INFINITE
+                repeatMode = ObjectAnimator.RESTART
+            }
+        }
+        val animationsRotateY = arrayOf(360f).map { translation ->
+            ObjectAnimator.ofFloat(editImage, "rotationY", translation).apply {
+                duration = 1000
+                repeatCount = ObjectAnimator.INFINITE
+                repeatMode = ObjectAnimator.RESTART
+            }
+        }
+        val animationsScaleY = arrayOf(4f).map { translation ->
+            ObjectAnimator.ofFloat(editImage, "scaleY", translation).apply {
+                duration = 800
+                repeatCount = ObjectAnimator.INFINITE
+                repeatMode = ObjectAnimator.RESTART
+            }
+        }
+        val animationsScaleX = arrayOf(4f).map { translation ->
+            ObjectAnimator.ofFloat(editImage, "scaleX", translation).apply {
+                duration = 800
+                repeatCount = ObjectAnimator.INFINITE
+                repeatMode = ObjectAnimator.RESTART
+            }
+        }
+        val set = AnimatorSet()
+
+        cancelBtn.setOnClickListener {
+            set.removeAllListeners()
+            set.cancel()
+        }
         btnScaleX.setOnClickListener{
-            val animations = arrayOf(4f).map { translation ->
-                ObjectAnimator.ofFloat(editImage, "scaleX", translation).apply {
-                    duration = 800
-                    repeatCount = ObjectAnimator.INFINITE
-                    repeatMode = ObjectAnimator.RESTART
-                }
-            }
-            val set = AnimatorSet()
-            set.playTogether(animations)
+            set.playTogether(animationsScaleX)
             set.start()
         }
-
-
         btnScaleY.setOnClickListener{
-            val animations = arrayOf(4f).map { translation ->
-                ObjectAnimator.ofFloat(editImage, "scaleY", translation).apply {
-                    duration = 800
-                    repeatCount = ObjectAnimator.INFINITE
-                    repeatMode = ObjectAnimator.RESTART
-                }
-            }
-            val set = AnimatorSet()
-            set.playTogether(animations)
+            set.playTogether(animationsScaleY)
             set.start()
         }
-
-
 // 3D rotation
         btnRotateByY.setOnClickListener{
-            val animations = arrayOf(360f).map { translation ->
-                ObjectAnimator.ofFloat(editImage, "rotationY", translation).apply {
-                    duration = 1000
-                    repeatCount = ObjectAnimator.INFINITE
-                    repeatMode = ObjectAnimator.RESTART
-                }
-            }
-            val set = AnimatorSet()
-            set.playTogether(animations)
+            set.playTogether(animationsRotateY)
             set.start()
         }
         btnRotateByX.setOnClickListener{
-            val animations = arrayOf(360f).map { translation ->
-                ObjectAnimator.ofFloat(editImage, "rotationX", translation).apply {
-                    duration = 1000
-                    repeatCount = ObjectAnimator.INFINITE
-                    repeatMode = ObjectAnimator.RESTART
-                }
-            }
-            val set = AnimatorSet()
-            set.playTogether(animations)
+            set.playTogether(animationsRotateX)
             set.start()
         }
 
