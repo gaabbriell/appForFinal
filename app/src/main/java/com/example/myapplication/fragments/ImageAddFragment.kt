@@ -18,9 +18,8 @@ import com.example.myapplication.R
 import com.example.myapplication.fragments.ImageAddFragment.Companion.IMAGE_REQUEST_CODE
 
 class ImageAddFragment : Fragment(R.layout.fragment_image_add) {
-    private lateinit var imageUri: Uri
     companion object{
-        val IMAGE_REQUEST_CODE = 100
+        const val IMAGE_REQUEST_CODE = 100
     }
     @SuppressLint("MissingInflatedId")
     override fun onCreateView(
@@ -55,6 +54,7 @@ class ImageAddFragment : Fragment(R.layout.fragment_image_add) {
         var editImage: ImageView = rootView2.findViewById(R.id.editImage)
 
         if (requestCode == IMAGE_REQUEST_CODE && resultCode == Activity.RESULT_OK){
+            var imageUri: Uri = data?.data!!
             addImage.setImageURI(imageUri)
             var sharedPreferences : SharedPreferences = activity?.applicationContext!!.getSharedPreferences("gmail", Context.MODE_PRIVATE)
             var editor : SharedPreferences.Editor = sharedPreferences.edit()

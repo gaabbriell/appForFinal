@@ -2,12 +2,14 @@ package com.example.myapplication.fragments
 
 import android.content.Context
 import android.content.SharedPreferences
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.DrawableRes
@@ -41,6 +43,11 @@ class ProfileFragment : Fragment(R.layout.fragment_profile), View.OnClickListene
         var imageViewProfilePicture: CircleImageView = rootView.findViewById(R.id.imageViewProfilePicture)
         val sharedPreferences : SharedPreferences = activity?.applicationContext!!.getSharedPreferences("gmail", Context.MODE_PRIVATE)
         var savedGmail : String? = sharedPreferences.getString("gmail",null)
+        var imageRotateScale: Float = 0F
+        var savedImageUri : String? = sharedPreferences.getString("imageUri",null)
+        var myUri: Uri = Uri.parse(savedImageUri)
+        var savedRotateScale : Float? = sharedPreferences.getFloat("rotateScale", 0F)
+        imageRotateScale = savedRotateScale!!.toFloat() - 90F
 
 
         dbRef = FirebaseDatabase.getInstance().getReference("Users")

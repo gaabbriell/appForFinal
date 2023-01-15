@@ -23,7 +23,6 @@ class RegistrationFragment : Fragment(R.layout.fragment_registration){
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        var database: DatabaseReference
         val rootView = inflater.inflate(R.layout.fragment_registration, container, false)
         val buttonRegistration : Button = rootView.findViewById(R.id.buttonRegistration)
         val textGoToRegister : TextView = rootView.findViewById(R.id.textGoToRegister)

@@ -14,9 +14,12 @@ import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.repeatOnLifecycle
 import com.example.myapplication.R
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import kotlinx.coroutines.NonCancellable.start
 
 
@@ -30,65 +33,9 @@ class EditFragment : Fragment(R.layout.fragment_edit) {
         val rootView = inflater.inflate(R.layout.fragment_edit, container, false)
         var editImage: ImageView = rootView.findViewById(R.id.editImage)
         var btnRotate: Button = rootView.findViewById(R.id.btnRotate)
-        var btnRotateByX:Button = rootView.findViewById(R.id.btnRotateByX)
-        var btnRotateByY:Button = rootView.findViewById(R.id.btnRotateByY)
-        var btnScaleX: Button = rootView.findViewById(R.id.btnScaleX)
-        var btnScaleY: Button = rootView.findViewById(R.id.btnScaleY)
-        var cancelBtn: Button = rootView.findViewById(R.id.cancelBtn)
+        val sharedPreferences : SharedPreferences = activity?.applicationContext!!.getSharedPreferences("gmail", Context.MODE_PRIVATE)
+        var savedGmail : String? = sharedPreferences.getString("gmail",null)
 
-
-        var animation = true
-        val animationsRotateX = arrayOf(360f).map { translation ->
-            ObjectAnimator.ofFloat(editImage, "rotationX", translation).apply {
-                duration = 1000
-                repeatCount = ObjectAnimator.INFINITE
-                repeatMode = ObjectAnimator.RESTART
-            }
-        }
-        val animationsRotateY = arrayOf(360f).map { translation ->
-            ObjectAnimator.ofFloat(editImage, "rotationY", translation).apply {
-                duration = 1000
-                repeatCount = ObjectAnimator.INFINITE
-                repeatMode = ObjectAnimator.RESTART
-            }
-        }
-        val animationsScaleY = arrayOf(4f).map { translation ->
-            ObjectAnimator.ofFloat(editImage, "scaleY", translation).apply {
-                duration = 800
-                repeatCount = ObjectAnimator.INFINITE
-                repeatMode = ObjectAnimator.RESTART
-            }
-        }
-        val animationsScaleX = arrayOf(4f).map { translation ->
-            ObjectAnimator.ofFloat(editImage, "scaleX", translation).apply {
-                duration = 800
-                repeatCount = ObjectAnimator.INFINITE
-                repeatMode = ObjectAnimator.RESTART
-            }
-        }
-        val set = AnimatorSet()
-
-        cancelBtn.setOnClickListener {
-            set.removeAllListeners()
-            set.cancel()
-        }
-        btnScaleX.setOnClickListener{
-            set.playTogether(animationsScaleX)
-            set.start()
-        }
-        btnScaleY.setOnClickListener{
-            set.playTogether(animationsScaleY)
-            set.start()
-        }
-// 3D rotation
-        btnRotateByY.setOnClickListener{
-            set.playTogether(animationsRotateY)
-            set.start()
-        }
-        btnRotateByX.setOnClickListener{
-            set.playTogether(animationsRotateX)
-            set.start()
-        }
 
 // 2D rotation
         var rotation = 90f

@@ -8,17 +8,6 @@
     tools:context=".fragments.EditFragment"
     android:background="@color/navy_grey">
 
-    <Button
-        android:id="@+id/cancelBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="cancel"
-        app:layout_constraintBottom_toTopOf="@+id/filterLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnRotate" />
-
 
     <LinearLayout
         android:id="@+id/headerSettings"
@@ -53,11 +42,11 @@
 
 
     <FrameLayout
+        android:layout_marginTop="30dp"
         android:id="@+id/editLayoutContainer"
         android:layout_width="360dp"
         android:layout_height="360dp"
         android:padding="5dp"
-        android:layout_marginTop="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/headerSettings">
@@ -92,24 +81,7 @@
         android:layout_marginBottom="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnRotate">
-
-        <Button
-            android:id="@+id/btnRotateByX"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="3D ROTATE X" />
-
-        <Button
-            android:id="@+id/btnScaleX"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="Scale X" />
-
-
-    </LinearLayout>
+        app:layout_constraintTop_toBottomOf="@+id/btnRotate"/>
 
     <LinearLayout
         android:id="@+id/filterLayout2"
@@ -120,28 +92,7 @@
         android:layout_marginBottom="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnRotate">
-
-        <Button
-            android:id="@+id/btnRotateByY"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="3D ROTATE Y" />
-
-
-        <Button
-            android:id="@+id/btnScaleY"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="scale y" />
-
-    </LinearLayout>
-
-
-
-
+        app:layout_constraintTop_toBottomOf="@+id/btnRotate"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

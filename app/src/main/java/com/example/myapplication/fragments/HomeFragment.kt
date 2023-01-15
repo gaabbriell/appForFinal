@@ -42,9 +42,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         var savedImage: String? = sharedPreferences.getString("ImageUrl",null)
         var savedPost: String? = sharedPreferences.getString("PostText",null)
         var savedPosition: Int = sharedPreferences.getInt("PositionNumber",0)
-
-        var X = 0
-        val post = ArrayList<Post>()
+        var post = ArrayList<Post>()
             post.add(
                 Post(
                     imageUrl = savedImage,
