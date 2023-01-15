@@ -44,7 +44,7 @@ class PostFragment : Fragment(R.layout.fragment_post) {
             }.apply()
             editTextImageUrl.text = null
             editTextPostText.text = null
-            x++
+            x += 1
         }
 
         return rootView
