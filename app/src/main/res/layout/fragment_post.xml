@@ -4,22 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E3E3E3"
+    android:background="#E6E6E6"
     tools:context=".fragments.PostFragment">
 
 
-    <LinearLayout
-        android:id="@+id/postbgwave"
-        android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:background="@drawable/wave_up"
-        android:backgroundTint="@color/light_pink"
-        android:paddingTop="50dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:orientation="horizontal">
-    </LinearLayout>
+<!--    <LinearLayout-->
+<!--        android:id="@+id/postbgwave"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="250dp"-->
+<!--        android:background="@drawable/wave_up"-->
+<!--        android:backgroundTint="@color/light_pink"-->
+<!--        android:paddingTop="50dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        android:orientation="horizontal">-->
+<!--    </LinearLayout>-->
     <LinearLayout
         android:id="@+id/postbgwavebtm"
         android:layout_width="match_parent"
@@ -53,7 +53,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Create post"
-                android:textColor="@color/white"
+                android:textColor="#171717"
                 android:textSize="22sp"
                 android:textStyle="bold"
                 android:layout_marginBottom="15dp"
@@ -61,13 +61,13 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/buttonPublish"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Publish"
-                android:backgroundTint="#7B208A"
-                android:layout_marginBottom="15dp"
+                android:background="@drawable/button_gradient"
+                android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -79,43 +79,48 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/postComponents"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="210dp"
+        android:layout_marginHorizontal="20dp"
+        android:background="@drawable/edt_background2"
         android:orientation="vertical"
-        android:layout_marginTop="55dp"
+        app:layout_constraintBottom_toTopOf="@+id/postbgwavebtm"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/headerPost">
 
-        <EditText
-            android:id="@+id/editTextPostText"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:hint="What's on your mind?"
-            android:textColorHint="#757575"
-            android:textColor="@color/black"
-            android:background="@drawable/edt_background2"
-            android:layout_marginHorizontal="20dp"
-            android:paddingStart="10dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            <EditText
+                android:id="@+id/editTextPostText"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginHorizontal="20dp"
+                android:background="@drawable/edt_background2"
+                android:hint="What's on your mind?"
+                android:paddingStart="10dp"
+                android:textColor="@color/black"
+                android:textColorHint="#757575"
+                android:backgroundTint="#E2E2E2"
+                android:layout_marginTop="50dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/editTextImageUrl"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginHorizontal="20dp"
-            android:layout_marginTop="15dp"
             android:background="@drawable/edt_background2"
+            android:backgroundTint="#E2E2E2"
             android:hint="Put your image url"
             android:paddingStart="10dp"
             android:textColor="@color/black"
             android:textColorHint="#757575"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextPostText"
-            tools:layout_editor_absoluteX="20dp" />
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextPostText" />
 
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>

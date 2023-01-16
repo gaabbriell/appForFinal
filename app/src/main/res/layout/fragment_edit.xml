@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:animateLayoutChanges="true"
     tools:context=".fragments.EditFragment"
-    android:background="@color/navy_grey">
+    android:background="@drawable/gradinet_bg">
 
 
     <LinearLayout
@@ -16,6 +16,7 @@
         android:orientation="horizontal"
         android:gravity="center_vertical"
         android:padding="10dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -24,19 +25,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="20dp"
-                android:text="Start animating"
-                android:textColor="#EF91FF"
+                android:text="Start editing"
+                android:textColor="#B944CD"
                 android:textSize="22sp"
                 android:textStyle="bold"
                 android:layout_weight="1"
                 android:layout_marginStart="15dp"/>
-
-<!--            <androidx.appcompat.widget.AppCompatImageView-->
-<!--                android:id="@+id/imageSave"-->
-<!--                android:layout_width="25dp"-->
-<!--                android:layout_height="25dp"-->
-<!--                android:layout_marginEnd="10dp"-->
-<!--                android:src="@drawable/ic_baseline_check_24"/>-->
 
     </LinearLayout>
 
@@ -62,11 +56,14 @@
     </FrameLayout>
 
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnRotate"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:text="rotate image"
+        android:background="@drawable/button_gradient"
+        android:textColor="@color/white"
+        android:layout_marginTop="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editLayoutContainer" />

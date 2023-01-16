@@ -153,8 +153,14 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                     imageUrl = "https://i.scdn.co/image/ab6761610000e5eb5ade2bbfc5fb33914d5ed14f",
                     post = "bin chilling like fr"
                 )
-
             )
+            post.add(
+                Post(
+                    imageUrl = "https://scontent.ftbs2-2.fna.fbcdn.net/v/t39.30808-6/326157291_1282901512275660_8726470748959585054_n.jpg?stp=dst-jpg_p370x247&_nc_cat=105&ccb=1-7&_nc_sid=dbeb18&_nc_ohc=BgDCWglD_qcAX9NdbN-&_nc_ht=scontent.ftbs2-2.fna&oh=00_AfANr0BRJvfRu8g9UPAFAV-bgjHOFj76LMp7a6xzP-JFbA&oe=63CA06B4",
+                    post = "ვენერა იყო სატურნის ეტლში შესული, რა ჩემი ბრალია..."
+                )
+            )
+
         return post
     }
 

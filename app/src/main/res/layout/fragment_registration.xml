@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#272833"
+    android:background="@drawable/gradinet_bg"
     tools:context=".fragments.RegistrationFragment">
 
 
@@ -24,7 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Create Account"
-            android:textColor="#EE90FE"
+            android:textColor="@color/dark_pink"
             android:textSize="30sp"
             android:textStyle="bold" />
 
@@ -33,7 +33,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Register to get started!"
-            android:textColor="#CACACA"
+            android:textColor="#4A4A4A"
             android:textSize="20sp" />
 
     </LinearLayout>
@@ -43,95 +43,110 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="24dp"
-        android:layout_marginBottom="32dp"
         android:orientation="vertical"
+        android:layout_marginTop="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-        <EditText
-            android:id="@+id/editTextPersonName"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginVertical="10dp"
-            android:background="@drawable/edt_background"
-            android:drawablePadding="5dp"
-            android:hint="Name"
-            android:paddingStart="10dp"
-            android:textColor="@color/white"
-            android:textColorHint="#CACACA"/>
 
-        <EditText
-            android:id="@+id/editTextPersonSurname"
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginVertical="10dp"
-            android:background="@drawable/edt_background"
-            android:drawablePadding="5dp"
-            android:hint="Surname"
-            android:paddingStart="10dp"
-            android:textColor="@color/white"
-            android:textColorHint="#CACACA"/>
+
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp">
+
+            <EditText
+                android:id="@+id/editTextPersonName"
+                android:layout_width="120dp"
+                android:layout_weight="1"
+                android:layout_height="50dp"
+                android:background="@drawable/edt_background"
+                android:drawablePadding="5dp"
+                android:hint="Name"
+                android:paddingStart="10dp"
+                android:textColor="#191919"
+                android:textColorHint="#4A4A4A" />
+
+            <EditText
+                android:id="@+id/editTextPersonSurname"
+                android:layout_width="140dp"
+                android:layout_weight="1"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/edt_background"
+                android:drawablePadding="5dp"
+                android:hint="Surname"
+                android:paddingStart="10dp"
+                android:textColor="#191919"
+                android:textColorHint="#4A4A4A" />
+
+
+        </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <CheckBox
                 android:id="@+id/checkboxMale"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingStart="10dp"
-                android:textColor="@color/white"
-                android:textColorHint="#CACACA"
                 android:button="@drawable/checkbox_selector"
                 android:clickable="true"
-                android:text="Male"/>
+                android:paddingStart="6dp"
+                android:text="Male"
+                android:textColor="#4A4A4A" />
+
             <CheckBox
                 android:id="@+id/checkboxFemale"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:paddingStart="10dp"
-                android:textColor="@color/white"
-                android:textColorHint="#CACACA"
+                android:layout_marginLeft="20dp"
                 android:button="@drawable/checkbox_selector"
                 android:clickable="true"
-                android:text="Female"/>
+                android:paddingStart="6dp"
+                android:text="Female"
+                android:textColor="#4A4A4A" />
         </LinearLayout>
 
         <EditText
             android:id="@+id/editTextEmail"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_marginVertical="10dp"
+            android:layout_marginTop="25dp"
             android:background="@drawable/edt_background"
             android:drawableLeft="@drawable/ic_baseline_email_24"
             android:drawablePadding="5dp"
             android:hint="Email"
             android:paddingStart="10dp"
-            android:textColor="@color/white"
-            android:textColorHint="#CACACA" />
+            android:textColor="#191919"
+            android:textColorHint="#4A4A4A" />
 
         <EditText
             android:id="@+id/editTextPassword"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_marginVertical="10dp"
+            android:layout_marginTop="15dp"
             android:background="@drawable/edt_background"
             android:drawableLeft="@drawable/ic_baseline_lock_24"
             android:drawablePadding="5dp"
             android:hint="Password"
             android:paddingStart="10dp"
-            android:textColor="@color/white"
-            android:textColorHint="#CACACA" />
+            android:textColor="#191919"
+            android:textColorHint="#4A4A4A" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/buttonRegistration"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:backgroundTint="#AC5ABA"
-            android:text="registration" />
+            android:background="@drawable/button_gradient"
+            android:text="registration"
+            android:textColor="@color/white" />
     </LinearLayout>
 
     <!--OR-->
@@ -140,7 +155,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="OR"
-        android:textColor="#8C8C8C"
+        android:textColor="#6C6C6C"
         android:layout_marginBottom="60dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -149,8 +164,8 @@
     <View
         android:id="@+id/dividerleft"
         android:layout_width="150dp"
-        android:layout_height="0.8dp"
-        android:background="#6C6C6C"
+        android:layout_height="1dp"
+        android:background="#959595"
         android:layout_marginBottom="60dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/titletext2"
@@ -159,8 +174,8 @@
     <View
         android:id="@+id/dividerright"
         android:layout_width="150dp"
-        android:layout_height="0.8dp"
-        android:background="#6C6C6C"
+        android:layout_height="1dp"
+        android:background="#959595"
         android:layout_marginBottom="60dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -186,7 +201,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="5dp"
             android:text="Have an account?"
-            android:textColor="#CACACA"
+            android:textColor="#4A4A4A"
             android:textSize="15sp" />
 
         <TextView
@@ -196,7 +211,7 @@
             android:enabled="true"
             android:clickable="true"
             android:text="Log in."
-            android:textColor="#EF91FF"
+            android:textColor="#C760D8"
             android:textSize="16sp"
             android:textStyle="bold" />
 

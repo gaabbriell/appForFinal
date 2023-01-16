@@ -4,17 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/navy_grey"
-    tools:context=".fragments.LoginFragment">
+    android:background="@drawable/gradinet_bg"
+    tools:context=".fragments.LoginFragment"
+>
 
-    <TextView
-        android:id="@+id/textView"
+    <pl.droidsonroids.gif.GifImageView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="APPNAME/LOGO"
-        android:textColor="#FFFFFF"
-        android:textSize="24sp"
+        android:layout_height="300dp"
+        android:src="@drawable/logo"
+        android:layout_marginTop="60dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,8 +36,8 @@
             android:layout_marginVertical="10dp"
             android:hint="Email"
             android:background="@drawable/edt_background"
-            android:textColor="@color/white"
-            android:textColorHint="#CACACA"
+            android:textColor="@color/text_edit_color"
+            android:textColorHint="@color/hint_color"
             android:drawableLeft="@drawable/ic_baseline_email_24"
             android:paddingStart="10dp"
             android:drawablePadding="5dp"/>
@@ -50,8 +48,8 @@
             android:layout_height="50dp"
             android:hint="Password"
             android:background="@drawable/edt_background"
-            android:textColor="@color/white"
-            android:textColorHint="#CACACA"
+            android:textColor="@color/text_edit_color"
+            android:textColorHint="@color/hint_color"
             android:layout_marginVertical="5dp"
             android:drawableLeft="@drawable/ic_baseline_lock_24"
             android:paddingStart="10dp"
@@ -65,7 +63,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Forgot Password?"
-        android:textColor="#EF91FF"
+        android:textColor="@color/dark_pink"
         android:textStyle="bold"
         android:textSize="15sp"
         android:enabled="true"
@@ -75,12 +73,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="#C367D3"
+        android:background="@drawable/button_gradient"
         android:text="login"
+        android:textColor="@color/white"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="25dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -104,7 +103,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="5dp"
             android:text="Don't have an account?"
-            android:textColor="#CACACA"
+            android:textColor="#4A4A4A"
             android:textSize="15sp" />
 
         <TextView
@@ -114,7 +113,7 @@
             android:enabled="true"
             android:clickable="true"
             android:text="Register Here."
-            android:textColor="#EF91FF"
+            android:textColor="#C760D8"
             android:textSize="16sp"
             android:textStyle="bold" />
 
@@ -127,7 +126,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="OR"
-        android:textColor="#8C8C8C"
+        android:textColor="#5A5A5A"
         app:layout_constraintBottom_toTopOf="@+id/footerLogin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -136,7 +135,7 @@
         android:id="@+id/dividerleft"
         android:layout_width="150dp"
         android:layout_height="0.8dp"
-        android:background="#6C6C6C"
+        android:background="#191919"
         app:layout_constraintBottom_toTopOf="@+id/footerLogin"
         app:layout_constraintEnd_toStartOf="@+id/titletext2"
         app:layout_constraintStart_toStartOf="parent"
@@ -145,7 +144,7 @@
         android:id="@+id/dividerright"
         android:layout_width="150dp"
         android:layout_height="0.8dp"
-        android:background="#6C6C6C"
+        android:background="#191919"
         app:layout_constraintBottom_toTopOf="@+id/footerLogin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/titletext2"
