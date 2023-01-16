@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.text.method.PasswordTransformationMethod
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -36,6 +37,7 @@ class LoginFragment : Fragment(R.layout.fragment_login){
         val forgotPasswordText : TextView = rootView.findViewById(forgotPasswordText)
         val rootView2: View = LayoutInflater.from(activity).inflate(R.layout.fragment_profile,container,false)
         var gmailTextView: TextView = rootView2.findViewById(R.id.gmailTextView)
+        editTextPassword.transformationMethod = PasswordTransformationMethod.getInstance()
 
         textGoToRegister.setOnClickListener {
             val fragment = RegistrationFragment()

@@ -2,6 +2,7 @@ package com.example.myapplication.fragments
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.text.method.PasswordTransformationMethod
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -32,7 +33,7 @@ class RegistrationFragment : Fragment(R.layout.fragment_registration){
         val checkboxFemale : CheckBox = rootView.findViewById(R.id.checkboxFemale)
         val editTextPersonName : EditText = rootView.findViewById(R.id.editTextPersonName)
         val editTextPersonSurname : EditText = rootView.findViewById(R.id.editTextPersonSurname)
-
+        editTextPassword.transformationMethod = PasswordTransformationMethod.getInstance()
         textGoToRegister.setOnClickListener {
             val fragment = LoginFragment()
             (activity as MainActivity).replaceFragment(fragment)
