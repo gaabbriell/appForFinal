@@ -11,5 +11,8 @@
     <color name="navy_blue">#14203E</color>
     <color name="light_pink">#EF91FF</color>
     <color name="dark_pink">#C367D3</color>
+    <color name="hint_color">#4A4A4A</color>
+    <color name="text_edit_color">#191919</color>
+
 
 </resources>

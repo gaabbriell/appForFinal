@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragments.ImageAddFragment"
-    android:background="@color/navy_grey">
+    android:background="@drawable/gradinet_bg">
 
     <LinearLayout
         android:id="@+id/headerImageAdd"
@@ -32,7 +32,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="20dp"
                 android:text="Upload image"
-                android:textColor="#EF91FF"
+                android:textColor="#B944CD"
                 android:textSize="30sp"
                 android:textStyle="bold"
                 android:layout_marginStart="20dp"
@@ -45,7 +45,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Upload your image and scroll right to start editing"
-                android:textColor="#CACACA"
+                android:textColor="#4A4A4A"
                 android:textSize="17sp"
                 android:layout_marginStart="20dp"/>
     </LinearLayout>
@@ -54,8 +54,9 @@
         android:id="@+id/editLayoutContainer"
         android:layout_width="360dp"
         android:layout_height="360dp"
+        android:layout_marginTop="5dp"
         android:padding="5dp"
-        android:layout_marginTop="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/uploadImgBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/headerImageAdd">
@@ -71,12 +72,13 @@
     </FrameLayout>
 
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/uploadImgBtn"
-        android:layout_width="wrap_content"
+        android:layout_width="110dp"
         android:layout_height="wrap_content"
         android:text="Upload"
-        android:backgroundTint="#C367D3"
+        android:textColor="@color/white"
+        android:background="@drawable/button_gradient"
         android:layout_marginBottom="90dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragments.SettingsFragment"
-    android:background="#E3E3E3">
+    android:background="@drawable/gradinet_bg">
 
 
     <FrameLayout
@@ -41,7 +41,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="20dp"
                     android:text="Settings"
-                    android:textColor="#595959"
+                    android:textColor="#171717"
                     android:textSize="22sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -90,7 +90,7 @@
         android:layout_width="match_parent"
         android:layout_height="260dp"
         android:layout_marginHorizontal="20dp"
-        android:background="@color/white"
+        android:background="@drawable/edt_background2"
         android:orientation="vertical"
         android:layout_marginTop="150dp"
         app:layout_constraintEnd_toEndOf="@+id/settingsLayout"
@@ -126,13 +126,14 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/buttonSetNewPassword"
-            android:layout_width="120dp"
+            android:layout_width="130dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp"
             android:layout_marginTop="20dp"
-            android:backgroundTint="#92429F"
+            android:background="@drawable/button_gradient"
+            android:textColor="@color/white"
             android:text="change password"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -145,19 +146,20 @@
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="10dp"
-        android:background="@color/white"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/edt_background2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
 
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/buttonLogout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Logout"
-            android:backgroundTint="#92429F"
+            android:textColor="@color/white"
+            android:background="@drawable/button_gradient"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

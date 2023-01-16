@@ -5,9 +5,12 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.ProfileFragment"
-    android:background="#E3E3E3">
+    android:background="#E6E6E6">
 
-    <LinearLayout
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
         android:layout_height="330dp"
@@ -16,7 +19,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-    </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     <LinearLayout
@@ -34,8 +39,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Profile"
-            android:textColor="#7B208A"
+            android:text="My profile"
+            android:textColor="#171717"
             android:textSize="30sp"
             android:textStyle="bold"/>
         <androidx.appcompat.widget.AppCompatButton
@@ -76,17 +81,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginLeft="5dp"
-                app:layout_constraintBottom_toTopOf="@+id/linearLayout7"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/imageViewProfilePicture"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayout8">
+                android:layout_marginTop="50dp"
+                app:layout_constraintEnd_toEndOf="@+id/linearLayout7"
+                app:layout_constraintStart_toStartOf="@+id/linearLayout7"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout7">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_marginRight="30dp">
+                    android:layout_marginEnd="18dp"
+                    android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/textViewPost"
@@ -100,16 +104,16 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:text="Post"
-                        android:textColor="#4F1559"
+                        android:textColor="#000000"
                         android:textSize="15sp"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_marginRight="30dp">
+                    android:layout_marginEnd="18dp"
+                    android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/textViewFollowers"
@@ -123,9 +127,9 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:text="Followers"
-                        android:textColor="#4F1559"
+                        android:textColor="#000000"
                         android:textSize="15sp"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -145,9 +149,9 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:text="Following"
-                        android:textColor="#4F1559"
+                        android:textColor="#000000"
                         android:textSize="15sp"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -157,92 +161,80 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                app:layout_constraintStart_toEndOf="@+id/imageViewProfilePicture"
-                app:layout_constraintTop_toTopOf="parent">
+                app:layout_constraintEnd_toEndOf="@+id/imageViewProfilePicture"
+                app:layout_constraintStart_toStartOf="@+id/imageViewProfilePicture"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewProfilePicture">
 
                 <TextView
                     android:id="@+id/personName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=""
-                    android:textColor="#4F1559"
+                    android:textColor="#000000"
                     android:textSize="20sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:layout_marginTop="10dp"/>
 
                 <TextView
                     android:id="@+id/personSurname"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"
                     android:text=""
-                    android:textColor="#4F1559"
+                    android:textColor="#000000"
                     android:textSize="20sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:layout_marginTop="10dp"/>
 
             </LinearLayout>
 
-            <LinearLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/linearLayout7"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginTop="10dp"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageViewProfilePicture">
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout8">
 
                 <TextView
                     android:id="@+id/textView4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Signed as:"
-                    android:textColor="#4F1559"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:textColor="#616161"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/gmailTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
                     android:text="TextView"
-                    android:textColor="#4F1559"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
+                    android:textColor="#616161"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_marginStart="7dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView4"
+                    app:layout_constraintStart_toEndOf="@+id/textView4"
+                    app:layout_constraintTop_toTopOf="@+id/textView4" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/imageViewProfilePicture"
                 android:layout_width="105dp"
                 android:layout_height="105dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
 
 
-    <LinearLayout
-        android:id="@+id/titleLinear"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/edt_background"
-        android:backgroundTint="@color/white"
-        android:layout_marginBottom="75dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:id="@+id/titletext8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:text="Your posts should appear here."
-            android:textStyle="bold"
-            android:textColor="#7B2089"
-            android:textSize="16sp" />
-    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
